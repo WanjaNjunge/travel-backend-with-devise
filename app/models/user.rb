@@ -18,6 +18,21 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :validatable,
           :jwt_authenticatable, jwt_revocation_strategy: self
 
+  
+  
+    enum role: { admin: 0, tour_operator: 1, traveller: 2 }
+
+    def admin?
+      role == 'admin'
+    end
+  
+    def tour_operator?
+      role == 'tour_operator'
+    end
+  
+    def traveller?
+      role == 'traveller'
+    end
 
   def jwt_payload
     super
