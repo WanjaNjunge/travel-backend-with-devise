@@ -2,6 +2,7 @@ class User < ApplicationRecord
   include Devise::JWT::RevocationStrategies::JTIMatcher
   has_many :travel_experiences, dependent: :destroy
   has_many :destinations, dependent: :destroy
+  has_many :travel_packages, dependent: :destroy
 
 
   validates :username, presence: true

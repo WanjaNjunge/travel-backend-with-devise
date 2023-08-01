@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :travel_packages
   resources :destinations
   resources :travel_experiences
   devise_for :users, controllers: {

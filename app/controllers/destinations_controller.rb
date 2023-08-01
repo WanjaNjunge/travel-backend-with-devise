@@ -16,7 +16,8 @@ class DestinationsController < ApplicationController
 
   # POST /destinations
   def create
-    @destination = Destination.new(destination_params)
+    # @destination = Destination.new(destination_params)
+    @destination = current_user.destinations.new(destination_params)
 
     if @destination.save
       render json: @destination, status: :ok
