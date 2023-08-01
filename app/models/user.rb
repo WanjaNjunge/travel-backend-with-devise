@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :travel_experiences, dependent: :destroy
   has_many :destinations, dependent: :destroy
   has_many :travel_packages, dependent: :destroy
+  has_many :bookings, dependent: :destroy
 
 
   validates :username, presence: true
